@@ -11,7 +11,8 @@ public class Ejercicio6 {
 		 double raiz;
 		 double sol1;
 		 double sol2;
-		 
+		 double sol3;
+		
 		 Scanner sc = new Scanner(System.in);
 		 
 		 System.out.println("Cual es el valor de (a): ");
@@ -24,15 +25,22 @@ public class Ejercicio6 {
 		 c = sc.nextDouble();
 		 
 		 raiz = (b*b-4*a*c);
-		 sol1 = (-b + raiz)/2*a;
-		 sol2 = (-b - raiz)/2*a;
+		 sol1 = (-b + Math.sqrt(raiz)) / (2 * a);
+		 sol2 = (-b - Math.sqrt(raiz)) / (2 * a);
+		 sol3 = (-b / (2 * a));
+		
+		 if (raiz > 0) {
+			 System.out.println("La primera solución es: " + sol1);
+			 System.out.println("La segunda solución es: " + sol2);
+		 } else if (raiz == 0){
+			 System.out.println("La unica solución es: " + sol3);
 		 
-		 if ((sol1!=0)&&(sol2!=0)) {
-			 System.out.println("Las soliciónes son: " + sol1 + sol2);
-		 
+		 } else if (raiz < 0){
+			 System.out.println("No existe solución");
 		
 		 }	 
-		 
+		
+		 sc.close();
 	}
 
 }
